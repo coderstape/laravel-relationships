@@ -12,5 +12,11 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+
+    $user = factory(\App\User::class)->create();
+
+    $user->phone()->create([
+        'phone' => '222-333-4567',
+    ]);
+
 });
