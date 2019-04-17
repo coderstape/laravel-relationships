@@ -12,5 +12,13 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+
+//    $user = \App\User::first();
+//
+//    $user->roles()->syncWithoutDetaching([3]);
+
+    $role = \App\Role::find(4);
+
+    $role->users()->sync([5]);
+
 });
