@@ -13,12 +13,14 @@
 
 Route::get('/', function () {
 
-//    $user = \App\User::first();
+    $user = \App\User::first();
 //
-//    $user->roles()->syncWithoutDetaching([3]);
+//    $user->roles()->sync([
+//        1 => [
+//            'name' =>'victor'
+//        ]
+//    ]);
 
-    $role = \App\Role::find(4);
-
-    $role->users()->sync([5]);
+    dd($user->roles->first()->pivot->name);
 
 });
